@@ -12,5 +12,18 @@ const stringLength = (string) => {
   return length;
 };
 
+const reverseString = (string) => {
+  const reversedString = string.split('').reverse().join('');
+  // let splitString = string.split('');
+  // let reversedString = splitString.reverse();
+  // let joinString = reversedString.join('');
+
+  if (string === '') {
+    throw new Error('No empty string');
+  }
+
+  return reversedString;
+};
+
 const myString = '';
-console.log(stringLength(myString));
+console.log(reverseString(myString));
