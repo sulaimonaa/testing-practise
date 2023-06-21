@@ -14,9 +14,6 @@ const stringLength = (string) => {
 
 const reverseString = (string) => {
   const reversedString = string.split('').reverse().join('');
-  // let splitString = string.split('');
-  // let reversedString = splitString.reverse();
-  // let joinString = reversedString.join('');
 
   if (string === '') {
     throw new Error('No empty string');
@@ -25,5 +22,27 @@ const reverseString = (string) => {
   return reversedString;
 };
 
-const myString = '';
-console.log(reverseString(myString));
+class Calculator {
+  add(a, b) {
+    return a + b;
+  }
+
+  subtract(a, b) {
+    return a - b;
+  }
+
+  divide(a, b) {
+    if (b !== 0) {
+      return a / b;
+    } else {
+      console.log('Error: Division by zero is not allowed.');
+      return undefined;
+    }
+  }
+
+  multiply(a, b) {
+    return a * b;
+  }
+}
+
+module.exports = Calculator;
