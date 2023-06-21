@@ -1,4 +1,5 @@
-const Calculator = require('./index.js'); // Assuming the Calculator class is defined in a separate file
+const Calculator = require('./index.js');
+const capitalize = require('./capitalize.js'); // Assuming the Calculator class is defined in a separate file
 
 describe('Calculator', () => {
   let calculator;
@@ -66,4 +67,51 @@ describe('Calculator', () => {
       expect(calculator.multiply(0, 9)).toBe(0);
     });
   });
+});
+
+describe('capitalize', () => {
+  it('should capitalize the first character of a string', () => {
+    const input = 'hello world';
+    const expectedOutput = 'Hello world';
+
+    const result = capitalize(input);
+
+    expect(result).toBe(expectedOutput);
+  });
+
+  it('should handle an empty string', () => {
+    const input = '';
+    const expectedOutput = '';
+
+    const result = capitalize(input);
+
+    expect(result).toBe(expectedOutput);
+  });
+
+  it('should handle a string with only one character', () => {
+    const input = 'a';
+    const expectedOutput = 'A';
+
+    const result = capitalize(input);
+
+    expect(result).toBe(expectedOutput);
+  });
+
+  it('should handle a string that is already capitalized', () => {
+    const input = 'OpenAI';
+    const expectedOutput = 'OpenAI';
+
+    const result = capitalize(input);
+
+    expect(result).toBe(expectedOutput);
+  });
+
+  //   it('should handle a string with leading whitespace', () => {
+  //     const input = '  openAI';
+  //     const expectedOutput = '  OpenAI';
+
+  //     const result = capitalize(input);
+
+  //     expect(result).toBe(expectedOutput);
+  //   });
 });
